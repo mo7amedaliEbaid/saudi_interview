@@ -1,6 +1,7 @@
 # Multipart Request
 ## Creating a Multipart Request
-- To create a multipart request, you first need to create an instance of the http.MultipartRequest class. The constructor for this class takes two arguments: the request method and the URL of the server.
+- To create a multipart request, you first need to create an instance of the http.MultipartRequest class. 
+- The constructor for this class takes two arguments: the request method and the URL of the server.
 
 - For example, the following code creates a multipart request with the POST method and the URL https://example.com/upload:
 
@@ -9,7 +10,8 @@ var request = http.MultipartRequest('POST', Uri.parse('https://example.com/uploa
 ```
 
 ## Adding Files to a Multipart Request
-- Once you have created a multipart request, you can add files to it using the files property. The files property is a list of http.MultipartFile objects.
+- Once you have created a multipart request, you can add files to it using the files property. 
+- The files property is a list of http.MultipartFile objects.
 
 - A http.MultipartFile object represents a file that is being uploaded to the server. The constructor for this object takes two arguments: the name of the file and the path to the file.
 
@@ -19,7 +21,8 @@ request.files.add(await http.MultipartFile.fromPath('image', 'path/to/image.png'
 ```
 
 ## Sending a Multipart Request
-- Once you have added all of the files and data to the multipart request, you can send it to the server using the send() method. The send() method returns a Future object. The Future object will complete with the response from the server.
+- Once you have added all of the files and data to the multipart request, you can send it to the server using the send() method. 
+- The send() method returns a Future object. The Future object will complete with the response from the server.
 
 - For example, the following code sends the multipart request to the server and prints the response status code:
 ```dart
@@ -29,15 +32,19 @@ print(response.statusCode);
 ![multipartrequest](https://github.com/mo7amedaliEbaid/dart-flutter-interview-questions-preparation/assets/131966482/a2e6c0e4-66d9-4eef-ba04-d33843bf5b39)
 
 # Integrating Socket IO Client
-- Web socket is a two-way, full duplex communication technology, in which the transmission of data is real-time and bi-directional. While Socket.io is a popular library used to implement web sockets.
--  The server side can be built on NodeJS, while this is the client-side integration in Flutter.
+- Web socket is a two-way, full duplex communication technology, in which the transmission of data is real-time and bi-directional. 
+- While Socket.io is a popular library used to implement web sockets.
+ - he server side can be built on NodeJS, while this is the client-side integration in Flutter.
 ## How does it work?
-- Our flutter app will be considered as a Client, while your backend is considered as Server and we will be establishing a bi-directional and real-time data transmission between them using Socket IO. Below are the flow steps you need to follow for successful data transmission.
+- Our flutter app will be considered as a Client, while your backend is considered as Server and we will be establishing a bi-directional 
+- and real-time data transmission between them using Socket IO. Below are the flow steps you need to follow for successful data transmission.
 
 - First, we have to build a connection with the server.
-- Your app will be listening to events, so if a new event arrives, your UI will reflect it immediately (Like listening to new messages in Chat).
+- Your app will be listening to events, so if a new event arrives, your UI will reflect it immediately 
+- (Like listening to new messages in Chat).
 - You can emit events, maybe when you want to broadcast some data to your backend (Like emitting a new message to Chat).
 - Don’t forget to close the connection between client and server.
+
 ## How to code
 - Add socket_io_client package in your pubspec.yaml as a dependency:
 - Establish the connection to the socket server as soon as the user opens Chat Page,
@@ -63,9 +70,11 @@ initSocket() {
 }
 
 ```
-- When the connection is established, the onConnect callback will be triggered and you can add your logic there, let’s say you want to get all messages or maybe listen for new messages, you can do that all here.
+- When the connection is established, the onConnect callback will be triggered and you can add your logic there, 
+- let’s say you want to get all messages or maybe listen for new messages, you can do that all here.
 
-- To add a listener, you can use socket.on(), and it will start listening to new events and will be triggered on all emits that happen on the socket server.
+- To add a listener, you can use socket.on(), and it will start listening to new events and will be triggered on all emits 
+- that happen on the socket server.
 ```dart
 socket.on('getMessageEvent', (newMessage) {
   messageList.add(MessageModel.fromJson(data));
@@ -117,7 +126,8 @@ await pusher.init(
 await pusher.connect();
 ```
 ### Subscribe to a public channel
-- Before your web app can receive the event you publish, your web app needs to subscribe to the my-channel channel channel. Do this with pusher.subscribe.
+- Before your web app can receive the event you publish, your web app needs to subscribe to the my-channel channel channel. 
+- Do this with pusher.subscribe.
 ```dart
 final myChannel = await pusher.subscribe(
   channelName: "my-channel"
@@ -133,9 +143,17 @@ void onEvent(PusherEvent event) {
 ```
 
 # TestFlight
-- TestFlight is an online service for over-the-air installation and testing of mobile applications, currently owned by Apple Inc. and only offered to developers within the iOS Developer Program.Developers sign up with the service to distribute applications to internal or external beta testers, who can subsequently send feedback about the application to developers.The TestFlight SDK additionally allows developers to receive remote logs, crash reports and tester feedback.
+- TestFlight is an online service for over-the-air installation and testing of mobile applications, 
+- currently owned by Apple Inc. and only offered to developers within the iOS Developer Program.
+- Developers sign up with the service to distribute applications to internal or external beta testers, 
+- who can subsequently send feedback about the application to developers.
+- The TestFlight SDK additionally allows developers to receive remote logs, crash reports and tester feedback.
+
 ## Firebase dynamic links
-- Firebase Dynamic Links is a feature provided by Google's Firebase platform that enables developers to create and manage deep links dynamically. Deep links are URLs that can navigate users directly to specific content or features within a mobile app, rather than just launching the app's home screen. Firebase Dynamic Links are particularly useful for scenarios like referral programs, content sharing, and user engagement.
+- Firebase Dynamic Links is a feature provided by Google's Firebase platform that enables developers to create and manage deep links 
+- dynamically. Deep links are URLs that can navigate users directly to specific content or features within a mobile app, 
+- rather than just launching the app's home screen. Firebase Dynamic Links are particularly useful for scenarios like referral programs,
+- content sharing, and user engagement.
 ```dart
 void checkToProvider(Uri deepLink) {
     if (deepLink.queryParameters.containsKey('')) {
@@ -171,7 +189,9 @@ void checkToProvider(Uri deepLink) {
 - Our public-cloud based infrastructure which hosts your app's updates.
 
 ## what is one signal notifications, how to use it with flutter?
-- OneSignal is a popular mobile and web push notification service that allows developers to send messages to users across different platforms. It supports iOS, Android, and web applications. OneSignal provides a straightforward way to integrate push notifications into your Flutter app. Here's a basic guide on how to use OneSignal with Flutter:
+- OneSignal is a popular mobile and web push notification service that allows developers to send messages to users across different platforms.
+- It supports iOS, Android, and web applications. OneSignal provides a straightforward way to integrate push notifications into your 
+- Flutter app. Here's a basic guide on how to use OneSignal with Flutter:
 
 ### Code
 - Add OneSignal Plugin:
@@ -202,7 +222,8 @@ class MyApp extends StatelessWidget {
 }
 ```
 - Handle Notifications:
-- To handle notifications in your Flutter app, listen to the OneSignal.shared.setNotificationReceivedHandler callback. This callback is triggered when a notification is received:
+- To handle notifications in your Flutter app, listen to the OneSignal.shared.setNotificationReceivedHandler callback. 
+- This callback is triggered when a notification is received:
 
 ```dart
 OneSignal.shared.setNotificationReceivedHandler(
@@ -232,30 +253,46 @@ OneSignal.shared.setNotificationOpenedHandler(
 - In the OneSignal dashboard, you can send test notifications to your app to verify that the integration is working correctly.
 
 ## Difference betweeb FCM, One Signal?
-- Support for SMS and email notifications: OneSignal allows you to send notifications to your users via SMS and email, in addition to push notifications. This can be helpful if you want to reach your users even if they don't have their app open or if they have push notifications turned off.
-- Advanced segmentation and targeting: OneSignal offers a variety of advanced segmentation and targeting options, such as the ability to target users based on their location, in-app behavior, and other factors. This can help you to send more relevant and timely notifications to your users.
-- Ease of use: Both OneSignal and FCM are relatively easy to use, but OneSignal is generally considered to be more user-friendly. OneSignal offers a variety of no-code tools and features, such as a drag-and-drop notification builder and pre-built templates. FCM also offers a variety of tools and features, but they are generally more geared towards developers.
+- Support for SMS and email notifications: OneSignal allows you to send notifications to your users via SMS and email, 
+- in addition to push notifications. This can be helpful if you want to reach your users even if they don't have their app open or 
+- if they have push notifications turned off.
+- Advanced segmentation and targeting: OneSignal offers a variety of advanced segmentation and targeting options, 
+- such as the ability to target users based on their location, in-app behavior, and other factors. 
+- This can help you to send more relevant and timely notifications to your users.
+- Ease of use: Both OneSignal and FCM are relatively easy to use, but OneSignal is generally considered to be more user-friendly. 
+- OneSignal offers a variety of no-code tools and features, such as a drag-and-drop notification builder and pre-built templates.
+- FCM also offers a variety of tools and features, but they are generally more geared towards developers.
 
 ## just in time , ahead of time in flutter.
-- In Flutter, there are two compilation modes: Just-In-Time (JIT) and Ahead-Of-Time (AOT). These compilation modes serve different purposes in the Flutter development lifecycle.
+- In Flutter, there are two compilation modes: Just-In-Time (JIT) and Ahead-Of-Time (AOT). 
+- These compilation modes serve different purposes in the Flutter development lifecycle.
 
 ### Just-In-Time (JIT):
 
-- Purpose: JIT compilation is primarily used during development to provide a faster development cycle. It allows you to see changes to your code immediately without the need for a full restart of the application.
-- How to Run with JIT: During development, when you use the flutter run command without additional flags, Flutter runs in JIT mode by default.
+- Purpose: JIT compilation is primarily used during development to provide a faster development cycle. 
+- It allows you to see changes to your code immediately without the need for a full restart of the application.
+- How to Run with JIT: During development, when you use the flutter run command without additional flags, 
+- Flutter runs in JIT mode by default.
 
 ### Ahead-Of-Time (AOT):
 
-- Purpose: AOT compilation is used for production-ready builds. It involves compiling the Dart code into native machine code ahead of time, resulting in a smaller and more optimized binary size. AOT compilation is beneficial for improving the startup performance and reducing the size of the final application.
+- Purpose: AOT compilation is used for production-ready builds. It involves compiling the Dart code into native machine code ahead of time, 
+- resulting in a smaller and more optimized binary size. AOT compilation is beneficial for improving the startup performance and 
+- reducing the size of the final application.
 - How to Build with AOT: To create a release build with AOT compilation, you can use the --release flag.
 
-#### In summary, during development, you typically use JIT for a faster development cycle, and for production releases, you use AOT for better performance and a smaller application size. The choice between JIT and AOT depends on the specific requirements of your project and whether you are in the development or production phase.
-## debug , profile and release modes in flutter.
-- In Flutter, there are three primary build modes that serve different purposes: Debug mode, Profile mode, and Release mode. Each mode has specific characteristics tailored for various stages of development and deployment.
+#### In summary, during development, you typically use JIT for a faster development cycle, and for production releases, 
+#### you use AOT for better performance and a smaller application size. 
+#### The choice between JIT and AOT depends on the specific requirements of your project and whether you are in the development or production phase.
+
+# debug , profile and release modes in flutter.
+- In Flutter, there are three primary build modes that serve different purposes: Debug mode, Profile mode, and Release mode. 
+- Each mode has specific characteristics tailored for various stages of development and deployment.
 
 ### Debug Mode:
 
-- Purpose: Debug mode is used during development to enable features like hot-reload, a more extensive set of debugging tools, and additional checks to aid in identifying and fixing issues.
+- Purpose: Debug mode is used during development to enable features like hot-reload, a more extensive set of debugging tools, 
+- and additional checks to aid in identifying and fixing issues.
 - How to Run in Debug Mode:
 ```
 flutter run
@@ -264,14 +301,16 @@ flutter run
 
 ### Profile Mode:
 
-- Purpose: Profile mode is a middle ground between Debug and Release modes. It includes some optimizations similar to Release mode but still retains debugging information for profiling and analyzing performance.
+- Purpose: Profile mode is a middle ground between Debug and Release modes. It includes some optimizations similar to Release mode 
+- but still retains debugging information for profiling and analyzing performance.
 - How to Run in Profile Mode:
 ```
 flutter run --profile
 ```
 ### Release Mode:
 
-- Purpose: Release mode is intended for producing optimized and stripped-down versions of your application for deployment. It includes aggressive optimizations to reduce the size and improve performance.
+- Purpose: Release mode is intended for producing optimized and stripped-down versions of your application for deployment. 
+- It includes aggressive optimizations to reduce the size and improve performance.
 
 - How to Build in Release Mode:
 ```
@@ -282,4 +321,5 @@ flutter build <platform> --release
 - Debug mode is for development with a focus on debugging tools and a faster development cycle.
 - Profile mode is for profiling and performance analysis while still retaining some debugging capabilities.
 - Release mode is for deploying the optimized and minimized version of your application for production.
-- When developing and testing your application, you may often use the default debug mode. However, for performance testing and preparing your app for release, you'll want to test and build in profile and release modes, respectively.
+- When developing and testing your application, you may often use the default debug mode. 
+- However, for performance testing and preparing your app for release, you'll want to test and build in profile and release modes, respectively.
