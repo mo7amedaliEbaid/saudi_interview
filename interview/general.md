@@ -3,9 +3,14 @@
 
 ## 0-Flutter architectural overview.
 
-- Flutter is a cross-platform UI toolkit that is designed to allow code reuse across operating systems such as iOS and Android, while also allowing applications to interface directly with underlying platform services. The goal is to enable developers to deliver high-performance apps that feel natural on different platforms, embracing differences where they exist while sharing as much code as possible.
+- Flutter is a cross-platform UI toolkit that is designed to allow code reuse across operating systems such as iOS and Android, 
+- while also allowing applications to interface directly with underlying platform services. The goal is to enable developers to deliver 
+- high-performance apps that feel natural on different platforms, embracing differences where they exist while sharing as much code as possible.
 
-- During development, Flutter apps run in a VM that offers stateful hot reload of changes without needing a full recompile. For release, Flutter apps are compiled directly to machine code, whether Intel x64 or ARM instructions, or to JavaScript if targeting the web. The framework is open source, with a permissive BSD license, and has a thriving ecosystem of third-party packages that supplement the core library functionality.
+- During development, Flutter apps run in a VM that offers stateful hot reload of changes without needing a full recompile. For release, 
+- Flutter apps are compiled directly to machine code, whether Intel x64 or ARM instructions, or to JavaScript if targeting the web. 
+- The framework is open source, with a permissive BSD license, and has a thriving ecosystem of third-party packages that supplement 
+- the core library functionality.
 
 
 ### Architectural layers.
@@ -13,31 +18,55 @@
    <img src="https://github.com/mo7amedaliEbaid/dart-flutter-interview-questions/blob/b3f2edbccd35b594ea589729248c3d4b322938ca/assets/flutt.png" width="770" />
 </p>
 
-- Flutter is designed as an extensible, layered system. It exists as a series of independent libraries that each depend on the underlying layer. No layer has privileged access to the layer below, and every part of the framework level is designed to be optional and replaceable.
+- Flutter is designed as an extensible, layered system. It exists as a series of independent libraries that each depend on the underlying layer. 
+- No layer has privileged access to the layer below, and every part of the framework level is designed to be optional and replaceable.
 
 #### Embedder.
-- The Embedder acts as a bridge between Flutter and the host platform, facilitating integration with operating systems such as Android and iOS. It manages the communication between Flutter and the native environment, allowing Flutter apps to interact seamlessly with platform-specific features and APIs.
-- To the underlying operating system, Flutter applications are packaged in the same way as any other native application. A platform-specific embedder provides an entrypoint; coordinates with the underlying operating system for access to services like rendering surfaces, accessibility, and input; and manages the message event loop. The embedder is written in a language that is appropriate for the platform: currently Java and C++ for Android, Objective-C/Objective-C++ for iOS and macOS, and C++ for Windows and Linux. Using the embedder, Flutter code can be integrated into an existing application as a module, or the code may be the entire content of the application. Flutter includes a number of embedders for common target platforms, but other embedders also exist.
+- The Embedder acts as a bridge between Flutter and the host platform, facilitating integration with operating systems such as Android and iOS. 
+- It manages the communication between Flutter and the native environment, allowing Flutter apps to interact seamlessly with platform-specific features and APIs.
+- To the underlying operating system, Flutter applications are packaged in the same way as any other native application. 
+- A platform-specific embedder provides an entrypoint; coordinates with the underlying operating system for access to services like rendering surfaces, 
+- accessibility, and input; and manages the message event loop. The embedder is written in a language that is appropriate for the platform: 
+- currently Java and C++ for Android, Objective-C/Objective-C++ for iOS and macOS, and C++ for Windows and Linux. 
+- Using the embedder, Flutter code can be integrated into an existing application as a module, or the code may be the entire content of the application. 
+- Flutter includes a number of embedders for common target platforms, but other embedders also exist.
 
 #### Engine.
-- At the core of Flutter's runtime is the Engine, implemented in C++. This component handles the low-level tasks essential for app execution, including rendering, input handling, and threading. The Engine is responsible for efficiently executing Dart code and managing communication with the Embedder. Its architecture allows Flutter to achieve high performance and smooth animations across diverse platforms.
-- At the core of Flutter is the Flutter engine, which is mostly written in C++ and supports the primitives necessary to support all Flutter applications. The engine is responsible for rasterizing composited scenes whenever a new frame needs to be painted. It provides the low-level implementation of Flutter’s core API, including graphics (through Impeller on iOS and coming to Android, and Skia on other platforms) text layout, file and network I/O, accessibility support, plugin architecture, and a Dart runtime and compile toolchain.
-- The engine is exposed to the Flutter framework through dart:ui, which wraps the underlying C++ code in Dart classes. This library exposes the lowest-level primitives, such as classes for driving input, graphics, and text rendering subsystems.
+- At the core of Flutter's runtime is the Engine, implemented in C++. This component handles the low-level tasks essential for app execution, 
+- including rendering, input handling, and threading. The Engine is responsible for efficiently executing Dart code and managing communication with the Embedder. 
+- Its architecture allows Flutter to achieve high performance and smooth animations across diverse platforms.
+- At the core of Flutter is the Flutter engine, which is mostly written in C++ and supports the primitives necessary to support all Flutter applications. 
+- The engine is responsible for rasterizing composited scenes whenever a new frame needs to be painted. It provides the low-level implementation of 
+- Flutter’s core API, including graphics (through Impeller on iOS and coming to Android, and Skia on other platforms) text layout, 
+- file and network I/O, accessibility support, plugin architecture, and a Dart runtime and compile toolchain.
+- The engine is exposed to the Flutter framework through dart:ui, which wraps the underlying C++ code in Dart classes. 
+- This library exposes the lowest-level primitives, such as classes for driving input, graphics, and text rendering subsystems.
 
 #### Framework.
-- The Framework, built with the Dart programming language, provides a comprehensive set of pre-designed widgets and abstractions for building user interfaces. Following a reactive and declarative paradigm, developers describe the UI as a function of the current state, allowing for expressive and flexible UI development. The Framework also includes libraries and tools for app logic, making it an integral part of the Flutter architecture.
+- The Framework, built with the Dart programming language, provides a comprehensive set of pre-designed widgets and abstractions for building user interfaces. 
+- Following a reactive and declarative paradigm, developers describe the UI as a function of the current state, allowing for expressive and flexible UI development.
+- The Framework also includes libraries and tools for app logic, making it an integral part of the Flutter architecture.
 
-- Typically, developers interact with Flutter through the Flutter framework, which provides a modern, reactive framework written in the Dart language. It includes a rich set of platform, layout, and foundational libraries, composed of a series of layers. Working from the bottom to the top, we have:
+- Typically, developers interact with Flutter through the Flutter framework, which provides a modern, reactive framework written in the Dart language. 
+- It includes a rich set of platform, layout, and foundational libraries, composed of a series of layers. Working from the bottom to the top, we have:
 
-- Basic foundational classes, and building block services such as animation, painting, and gestures that offer commonly used abstractions over the underlying foundation.
-- The rendering layer provides an abstraction for dealing with layout. With this layer, you can build a tree of renderable objects. You can manipulate these objects dynamically, with the tree automatically updating the layout to reflect your changes.
-- The widgets layer is a composition abstraction. Each render object in the rendering layer has a corresponding class in the widgets layer. In addition, the widgets layer allows you to define combinations of classes that you can reuse. This is the layer at which the reactive programming model is introduced.
-- The Material and Cupertino libraries offer comprehensive sets of controls that use the widget layer’s composition primitives to implement the Material or iOS design languages.
-- The Flutter framework is relatively small; many higher-level features that developers might use are implemented as packages, including platform plugins like camera and webview, as well as platform-agnostic features like characters, http, and animations that build upon the core Dart and Flutter libraries. Some of these packages come from the broader ecosystem, covering services like in-app payments, Apple authentication, and animations.
+- Basic foundational classes, and building block services such as animation, painting, and gestures that offer commonly used abstractions 
+- over the underlying foundation.
+- The rendering layer provides an abstraction for dealing with layout. With this layer, you can build a tree of renderable objects. 
+- You can manipulate these objects dynamically, with the tree automatically updating the layout to reflect your changes.
+- The widgets layer is a composition abstraction. Each render object in the rendering layer has a corresponding class in the widgets layer. 
+- In addition, the widgets layer allows you to define combinations of classes that you can reuse. This is the layer at which the reactive programming model is 
+- introduced.
+- The Material and Cupertino libraries offer comprehensive sets of controls that use the widget layer’s composition primitives to implement the Material or iOS 
+- design languages.
+- The Flutter framework is relatively small; many higher-level features that developers might use are implemented as packages, 
+- including platform plugins like camera and webview, as well as platform-agnostic features like characters, http, 
+- and animations that build upon the core Dart and Flutter libraries. Some of these packages come from the broader ecosystem, covering services 
+- like in-app payments, Apple authentication, and animations.
 
 
 ### 1- What is a typedef ?
-- In Dart , typedef or (function types alias) helps to define pointer to excute code within memory.
+- In Dart , typedef or (function types alias) helps to define pointer to execute code within memory.
 - typedef can be used as a pointer that references a function.
 - It is a type alias allows you to provide a new name for an existing data type into your program.
 - Type alias don't create a new types , they simply provide a new name to an existing type.
@@ -46,7 +75,9 @@ typedef IntList=List<int>;
 IntList il=[1,2,3];
 ```
 ##### ChatGPT Answer:
-- In Dart, typedef is used to create a named function type. It allows you to define a function signature with a custom name, which can then be used to declare variables and parameters of that function type. This can make your code more readable and expressive, especially when dealing with complex or recurring function signatures.
+- In Dart, typedef is used to create a named function type. It allows you to define a function signature with a custom name, 
+- which can then be used to declare variables and parameters of that function type. This can make your code more readable and expressive, 
+- especially when dealing with complex or recurring function signatures.
 
 Here's a simple example:
 ```dart
@@ -77,7 +108,7 @@ void main() {
 - allows only a single assignment.
 - It must have an initializer.
 - once it has been initialized with a value, the variable cannot be reassigned.
-- A final variable may rely on runtime excution of code to determine its state, but it must occur during initialization.
+- A final variable may rely on runtime execution of code to determine its state, but it must occur during initialization.
 - :thumbsup:
     ```dart
   final Datetime datetime=Datetime.now();
@@ -95,18 +126,25 @@ void main() {
 ### 3- Does Dart Single threaded language and why ?
    - Yes, Dart is a single threaded language .
    - Because it use only one thread.
-   - It excutes one thing at a time with the support of isolates , event loop and asynchronous code.
-   - The event loop handles the excution of multiple chunks of your program over time.
+   - It executes one thing at a time with the support of isolates , event loop and asynchronous code.
+   - The event loop handles the execution of multiple chunks of your program over time.
    - the event loop is what allows multiple operations in a non-blocking way.
 
 ##### ChatGPT Answer:
--Yes, Dart is primarily a single-threaded language. The Dart language itself is designed to be single-threaded, meaning that it doesn't inherently support concurrent execution of multiple threads within the same process. This design choice simplifies the language and makes it easier to reason about code in many cases.
+- Yes, Dart is primarily a single-threaded language. The Dart language itself is designed to be single-threaded, meaning that it doesn't inherently
+- support concurrent execution of multiple threads within the same process. This design choice simplifies the language and makes it easier to reason about 
+- code in many cases.
 
-- However, Dart does provide support for asynchronous programming through its Future and Stream classes, which allow you to work with asynchronous operations without the need for explicit threads. Asynchronous programming in Dart is based on the concept of event loops and callbacks, making it possible to handle I/O operations, such as network requests or file operations, without blocking the main thread.
+- However, Dart does provide support for asynchronous programming through its Future and Stream classes, which allow you to work with asynchronous operations 
+- without the need for explicit threads. Asynchronous programming in Dart is based on the concept of event loops and callbacks, 
+- making it possible to handle I/O operations, such as network requests or file operations, without blocking the main thread.
 
-- The Dart runtime uses an event loop to efficiently manage asynchronous tasks. This model is known as the single-threaded event loop model. It allows Dart programs to perform non-blocking I/O operations, ensuring that the application remains responsive even when waiting for external resources.
+- The Dart runtime uses an event loop to efficiently manage asynchronous tasks. This model is known as the single-threaded event loop model. 
+- It allows Dart programs to perform non-blocking I/O operations, ensuring that the application remains responsive even when waiting for external resources.
 
-- While Dart itself is single-threaded, it's important to note that you can still achieve concurrent-like behavior through asynchronous programming without the need for explicit multi-threading. This design choice aligns with Dart's focus on simplicity, ease of use, and suitability for client-side development (e.g., Flutter for mobile and web applications).
+- While Dart itself is single-threaded, it's important to note that you can still achieve concurrent-like behavior through asynchronous programming 
+- without the need for explicit multi-threading. This design choice aligns with Dart's focus on simplicity, ease of use, and suitability for client-side development 
+- (e.g., Flutter for mobile and web applications).
 
    
 ### 4- What is the use of private keyword in dart ?
@@ -121,7 +159,9 @@ void main() {
 - non final string variables can be reassigned.
 
 ##### ChatGPT Answer:
-- In Dart, "immutable" refers to objects whose state cannot be changed after they are created. Once an immutable object is instantiated, its values cannot be modified. This characteristic is important for creating more predictable and safer code, especially in scenarios where you want to ensure that the data remains constant throughout its lifecycle.
+- In Dart, "immutable" refers to objects whose state cannot be changed after they are created. Once an immutable object is instantiated, 
+- its values cannot be modified. This characteristic is important for creating more predictable and safer code, especially in scenarios
+- where you want to ensure that the data remains constant throughout its lifecycle.
 
 - Dart provides several built-in classes that are immutable, such as:
 1- String: Once a Dart string is created, you cannot change its individual characters.
@@ -136,11 +176,13 @@ int immutableInt = 42;
 // This will create a new int, it doesn't modify the original one
 immutableInt += 10;
 ```
-- Using immutable objects can lead to more predictable code, as you don't have to worry about unexpected changes in the object's state. It also facilitates reasoning about code in concurrent or asynchronous scenarios. Dart's final keyword is often used to create variables that, once assigned, cannot be reassigned to a different object, providing a level of immutability for the variable itself.
+- Using immutable objects can lead to more predictable code, as you don't have to worry about unexpected changes in the object's state. 
+- It also facilitates reasoning about code in concurrent or asynchronous scenarios. Dart's final keyword is often used to create variables that, 
+- once assigned, cannot be reassigned to a different object, providing a level of immutability for the variable itself.
 
 
 #### advantages of using immutable data.
-- it's inherently thread safe, because since no code can alter its content , it is guaranted to the same reference no matter what code is accessing it.
+- it's inherently thread safe, because since no code can alter its content , it is guaranteed to the same reference no matter what code is accessing it.
 
 ### 6- What is a singleton ?
 - Singleton pattern ensures that a class has only one instance and also provides a global point of access to it.
@@ -167,10 +209,15 @@ main() {
 - It allows for parallel processing and better utilization of multi-core systems.
 - Isolates don't share memory; they communicate with each other by passing messages (usually immutable data) using ports.
 - This approach helps to avoid common issues related to shared-memory concurrency, like race conditions or deadlocks.
-- Each isolate has its own event queue and event loop, which processes incoming messages and ensures that only one message is handled at a time, preserving sequential consistency within the isolate.
-- Isolates communicate with each other by passing messages, and they are independent of each other in terms of memory. This isolation provides a level of safety when dealing with concurrent programming, as there is no shared state that can be modified by multiple isolates simultaneously.
-- To create an isolate in Dart, you use the Isolate class. Each isolate runs its own Dart program, and communication between isolates is typically done through message passing using the SendPort and ReceivePort classes.
-- Isolates are especially useful for tasks that can be parallelized, such as processing data in the background or performing heavy computations without blocking the main thread of an application.
+- Each isolate has its own event queue and event loop, which processes incoming messages and ensures that only one message is handled at a time, 
+- preserving sequential consistency within the isolate.
+- Isolates communicate with each other by passing messages, and they are independent of each other in terms of memory. 
+- This isolation provides a level of safety when dealing with concurrent programming, as there is no shared state that can be modified by multiple isolates 
+- simultaneously.
+- To create an isolate in Dart, you use the Isolate class. Each isolate runs its own Dart program, and communication between isolates is typically done 
+- through message passing using the SendPort and ReceivePort classes.
+- Isolates are especially useful for tasks that can be parallelized, such as processing data in the background or performing heavy computations without 
+- blocking the main thread of an application.
 ```dart
 import 'dart:isolate';
 
@@ -221,7 +268,7 @@ void isolateFunction(SendPort sendPort) {
 ### 9- What is a sealed class ?
 - Can't be extended outside of its library "file".
 
-### 10- What is an inhereted widget in flutter ?
+### 10- What is an inherited widget in flutter ?
 - Base class of widgets that efficiently propagate information down the tree ( MediaQuery, Theme ).
 ```dart
 import 'package:flutter/material.dart';
@@ -445,12 +492,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 ### 13- Difference between Expanded and Flexible ?
 - Flexible takes only the needed space, and Expanded takes all available space, respecting the flex factor.
 - The Expanded widget simply takes all available space.
-- One important distinction between the Flexible and Expanded widgets is that Flexible does not force its children to take the same size as itself where the Expanded widget forces its child to take the same size.
+- One important distinction between the Flexible and Expanded widgets is that Flexible does not force its children to take the same size as 
+- itself where the Expanded widget forces its child to take the same size.
 - Widget under Flexible are by default WRAP_CONTENT although you can change it using parameter fit.
 - Widget under Expanded is MATCH_PARENT you can change it using flex.
 
-### 14- What id generic programming ?
-- Style of computer programming in which algorithims are written in terms of types to be specified later that are then instantiated when needed for specific types provided.
+### 14- What is generic programming ?
+- Style of computer programming in which algorithms are written in terms of types to be specified later that are then instantiated when needed for specific 
+- types provided.
 
 ### 15- Solid Principles ?
 
@@ -462,7 +511,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 - Adding new features without modifying the existing code.
 
 #### L=>Liskov substitution principle.
-- Objects of a superclass should be replacable with objects of its subclass without breaking the application.
+- Objects of a superclass should be replaceable with objects of its subclass without breaking the application.
 - Objects of our subclass behaves the same way as objects of our superclass.
 
 #### I=>Interface Segregation Principle .
@@ -1733,3 +1782,7 @@ main(){
 - Domain. The Domain layer contains the enterprise logic and types. This layer should not depend on anything outside of itself. This layer typically defines the models and data structures that represent the business entities and concepts.
 ### UseCases
 - In Clean Architecture, a use case is a piece of business logic that represents a single task that the system needs to perform. The use case encapsulates the rules and logic required to perform the task, and defines the inputs and outputs required for the operation.
+
+## What is a vsync?
+
+- Vsync basically keeps the track of screen, so that Flutter does not renders the animation when the screen is not being displayed
