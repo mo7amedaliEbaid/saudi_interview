@@ -1,5 +1,5 @@
 main() {
-  print(sortArray([5, 2, 7, 9, 2, 8, 9, 6, 5, 55, 7, 8]));
+  print(selection([5, 2, 7, 9, 2, 8, 9, 6, 5, 55, 7, 8]));
 }
 
 List<int> sortArray(List<int> nums) {
@@ -81,6 +81,21 @@ selectionSort(List<int> arr) {
       }
     }
     // Swap arr[i] and arr[minIndex]
+    int temp = arr[i];
+    arr[i] = arr[minIndex];
+    arr[minIndex] = temp;
+  }
+  return arr;
+}
+
+List<int> selection(List<int> arr) {
+  for (var i = 0; i < arr.length - 1; i++) {
+    int minIndex = i;
+    for (var j = i; j < arr.length; j++) {
+      if (arr[j] < arr[minIndex]) {
+        minIndex = j;
+      }
+    }
     int temp = arr[i];
     arr[i] = arr[minIndex];
     arr[minIndex] = temp;

@@ -1,8 +1,13 @@
 ## What are Data Structures?
-- A data structure is a mechanical or logical way that data is organized within a program. The organization of data is what determines how a program performs. There are many types of data structures, each with its own uses. When designing code, we need to pay particular attention to the way data is structured. If data isn't stored efficiently or correctly structured, then the overall performance of the code will be reduced.
+- A data structure is a mechanical or logical way that data is organized within a program.
+- The organization of data is what determines how a program performs. There are many types of data structures,
+- each with its own uses. When designing code, we need to pay particular attention to the way data is structured.
+- If data isn't stored efficiently or correctly structured, then the overall performance of the code will be reduced.
 
 ## Why Create Data Structures?
-- Data structures serve a number of important functions in a program. They ensure that each line of code performs its function correctly and efficiently, they help the programmer identify and fix problems with his/her code, and they help to create a clear and organized code base.
+- Data structures serve a number of important functions in a program. They ensure that each line of code performs its function correctly 
+- and efficiently, they help the programmer identify and fix problems with his/her code, 
+- and they help to create a clear and organized code base.
 ## Explain the process behind storing a variable in memory.
 - A variable is stored in memory based on the amount of memory that is needed. Following are the steps followed to store a variable:
 - The required amount of memory is assigned first.
@@ -10,11 +15,19 @@
 - Using concepts like dynamic allocation ensures high efficiency and that the storage units can be accessed based on requirements in real-time.
 
 ## Can you explain the difference between file structure and storage structure?
-- File Structure: Representation of data into secondary or auxiliary memory say any device such as a hard disk or pen drives that stores data which remains intact until manually deleted is known as a file structure representation.
-- Storage Structure: In this type, data is stored in the main memory i.e RAM, and is deleted once the function that uses this data gets completely executed.
-- The difference is that the storage structure has data stored in the memory of the computer system, whereas the file structure has the data stored in the auxiliary memory.
- - What is a stack data structure? What are the applications of stack?
-- A stack is a data structure that is used to represent the state of an application at a particular point in time. The stack consists of a series of items that are added to the top of the stack and then removed from the top. It is a linear data structure that follows a particular order in which operations are performed. LIFO (Last In First Out) or FILO (First In Last Out) are two possible orders. A stack consists of a sequence of items. The element that's added last will come out first, a real-life example might be a stack of clothes on top of each other. When we remove the cloth that was previously on top, we can say that the cloth that was added last comes out first.
+- File Structure: Representation of data into secondary or auxiliary memory say any device such as a hard disk or pen drives that stores
+- data which remains intact until manually deleted is known as a file structure representation.
+- Storage Structure: In this type, data is stored in the main memory i.e RAM, and is deleted once the function that uses this data gets 
+- completely executed.
+- The difference is that the storage structure has data stored in the memory of the computer system, 
+- whereas the file structure has the data stored in the auxiliary memory.
+- What is a stack data structure? What are the applications of stack?
+- A stack is a data structure that is used to represent the state of an application at a particular point in time.
+- The stack consists of a series of items that are added to the top of the stack and then removed from the top.
+- It is a linear data structure that follows a particular order in which operations are performed. 
+- LIFO (Last In First Out) or FILO (First In Last Out) are two possible orders. A stack consists of a sequence of items.
+- The element that's added last will come out first, a real-life example might be a stack of clothes on top of each other. 
+- When we remove the cloth that was previously on top, we can say that the cloth that was added last comes out first.
 - Following are some applications for stack data structure:
 
 - It acts as temporary storage during recursive operations
@@ -25,12 +38,21 @@
 - Function calls order
 
 ## What is a queue data structure? What are the applications of queue?
-- A queue is a linear data structure that allows users to store items in a list in a systematic manner. The items are added to the queue at the rear end until they are full, at which point they are removed from the queue from the front. Queues are commonly used in situations where the users want to hold items for a long period of time, such as during a checkout process. A good example of a queue is any queue of customers for a resource where the first consumer is served first.
+- A queue is a linear data structure that allows users to store items in a list in a systematic manner. 
+- The items are added to the queue at the rear end until they are full, at which point they are removed from the queue from the front.
+- Queues are commonly used in situations where the users want to hold items for a long period of time, such as during a checkout process. 
+- A good example of a queue is any queue of customers for a resource where the first consumer is served first.
 
 ### What is an Algorithm?
-- An algorithm is a finite sequence of well-defined instructions used to solve a class of problems or conduct a computation in mathematics and computer science.
-- Algorithms are used to specify how calculations, data processing, automated reasoning, automated decision making, and other tasks should be done. An algorithm is a method for calculating a function that can be represented in a finite amount of space and time and in a well defined formal language. The instructions describe a computation that, when run, continues through a finite number of well defined subsequent stages, finally creating "output" and terminating at a final ending state, starting from an initial state and initial input (possibly empty). The shift from one state to the next is not always predictable; some algorithms, known as randomised algorithms, take random input into account.
-### Advatages:
+- An algorithm is a finite sequence of well-defined instructions used to solve a class of problems or conduct a computation in 
+- mathematics and computer science.
+- Algorithms are used to specify how calculations, data processing, automated reasoning, automated decision making, 
+- and other tasks should be done. An algorithm is a method for calculating a function that can be represented in 
+- a finite amount of space and time and in a well defined formal language. The instructions describe a computation that, when run, 
+- continues through a finite number of well defined subsequent stages, finally creating "output" and terminating at a final ending state, 
+- starting from an initial state and initial input (possibly empty). The shift from one state to the next is not always predictable; 
+- some algorithms, known as randomised algorithms, take random input into account.
+### Advantages:
 - Algorithms boost the effectiveness of an existing method.
 It is easy to compare an algorithm's performance to those of other approaches using various methods (Time Complexity, Space Complexity, etc.).
 Algorithms provide the designers with a detailed description of the criteria and goals of the problems.
@@ -41,25 +63,31 @@ We can quantify and assess the problem's complexity in terms of time and space u
 The cost of design is also reduced if proper algorithms are used.
 
 - How can we compare between two algorithms written for the same problem?
-- The complexity of an algorithm is a technique that is used to categorise how efficient it is in comparison to other algorithms. It focuses on how the size of the data set to be processed affects execution time. In computing, the algorithm's computational complexity is critical. It is a good idea to categorise algorithms according to how much time or space they take up and to describe how much time or space they take up as a function of input size.
+- The complexity of an algorithm is a technique that is used to categorise how efficient it is in comparison to other algorithms. 
+- It focuses on how the size of the data set to be processed affects execution time. In computing, 
+- the algorithm's computational complexity is critical. It is a good idea to categorise algorithms according to how much time or space 
+- they take up and to describe how much time or space they take up as a function of input size.
 
 - Complexity of Time: The running time of a program as a function of the size of the input is known as time complexity.
-- Complexity of Space: Space complexity examines algorithms based on how much space they require to fulfil their tasks. In the early days of computers, space complexity analysis was crucial (when storage space on the computer was limited).
+- Complexity of Space: Space complexity examines algorithms based on how much space they require to fulfil their tasks. 
+- In the early days of computers, space complexity analysis was crucial (when storage space on the computer was limited).
 
 - What is asynchronous programming?
-- Allows tasks to be excuted independntly and concurrently without waiting for each other to complete ,
-- It inables a non-blocking operations , allowing a program to continue processing other tasks while waiting for certain operations to finish. 
+- Allows tasks to be executed independently and concurrently without waiting for each other to complete ,
+- It enables a non-blocking operations , allowing a program to continue processing other tasks while waiting for certain operations to finish. 
 
 ## Data Structure
 ![dsc](https://github.com/mo7amedaliEbaid/dart-flutter-interview-questions-preparation/assets/131966482/f5d4b088-7837-4824-b666-5f5ce79d034d)
 
 ## Difference between linear and non-linear data structures?
 
-- Linear and non-linear data structures refer to the way data elements are organized, stored, and accessed in a data structure. The primary difference lies in the arrangement of elements and the relationships between them.
+- Linear and non-linear data structures refer to the way data elements are organized, stored, and accessed in a data structure. 
+- The primary difference lies in the arrangement of elements and the relationships between them.
 
 #### Linear Data Structures:
 
-- Definition: In linear data structures, elements are stored in a sequential manner, where each element has a unique predecessor and successor (except for the first and last elements, respectively).
+- Definition: In linear data structures, elements are stored in a sequential manner, where each element has a unique predecessor 
+- and successor (except for the first and last elements, respectively).
 
 ##### Examples:
 
@@ -72,9 +100,11 @@ Characteristics:
 - Elements are arranged in a linear or sequential order.
 - Each element has a unique predecessor and successor (except for the first and last elements).
 - Access to elements is straightforward, and traversal is usually sequential.
+
 #### Non-linear Data Structures:
 
-- Definition: In non-linear data structures, elements are not arranged in a sequential order. Instead, they are connected in a way that allows for more complex relationships between elements.
+- Definition: In non-linear data structures, elements are not arranged in a sequential order. Instead, they are connected in a way that allows 
+- for more complex relationships between elements.
 
 ##### Examples:
 
@@ -90,7 +120,8 @@ Characteristics:
 
 ##### Memory Organization:
 
-- Linear data structures use contiguous memory locations (e.g., arrays) or nodes with explicit references to the next/previous element (e.g., linked lists).
+- Linear data structures use contiguous memory locations (e.g., arrays) or nodes with explicit references to the next/previous element 
+- (e.g., linked lists).
 - Non-linear data structures use more complex memory arrangements, such as hierarchical structures in trees or arbitrary connections in graphs.
 ##### Traversal:
 
@@ -104,7 +135,8 @@ Characteristics:
 
 - Linear structures are suitable for scenarios where data needs to be processed in a sequential or ordered manner.
 - Non-linear structures are useful when data relationships are more complex and may involve multiple connections.
-- In summary, the choice between linear and non-linear data structures depends on the specific requirements of the application and the nature of the relationships between data elements.
+- In summary, the choice between linear and non-linear data structures depends on the specific requirements of the application and the 
+- nature of the relationships between data elements.
 
 ### Arrays:
 
@@ -118,6 +150,7 @@ Access time is constant, O(1), but inserting or deleting elements may be less ef
 A collection of nodes, where each node contains data and a reference (or link) to the next node in the sequence.
 Dynamic in size and can easily grow or shrink.
 Efficient insertion and deletion, but access time is O(n) since you have to traverse the list.
+
 ### Stacks:
 
 A Last In, First Out (LIFO) data structure.
@@ -158,30 +191,37 @@ Useful for priority queues.
 A data structure is a way of organizing and storing data to perform operations efficiently.
 ## Explain the difference between an array and a linked list.
 
-An array is a static data structure with fixed size, while a linked list is dynamic and can grow or shrink. Arrays have constant time access, but insertion/deletion is less efficient. Linked lists have efficient insertion/deletion but slower access.
+An array is a static data structure with fixed size, while a linked list is dynamic and can grow or shrink. 
+Arrays have constant time access, but insertion/deletion is less efficient. Linked lists have efficient insertion/deletion but slower access.
 ## What is a stack?
 
 A stack is a Last In, First Out (LIFO) data structure where elements are added and removed from the same end (top). Common operations include push (add), pop (remove), and peek (view the top element).
 ## Explain the concept of recursion.
 
-Recursion is a programming technique where a function calls itself in its own definition. It is often used to break down a problem into smaller subproblems.
+Recursion is a programming technique where a function calls itself in its own definition. It is often used to break down a problem 
+into smaller subProblems.
 ## What is a binary search tree (BST)?
-A binary search tree is a binary tree where the left subtree of a node contains only nodes with keys less than the node's key, and the right subtree contains only nodes with keys greater than the node's key.
+A binary search tree is a binary tree where the left subtree of a node contains only nodes with keys less than the node's key,
+and the right subtree contains only nodes with keys greater than the node's key.
 ## Describe the depth-first search (DFS) algorithm.
 
-DFS is an algorithm for traversing or searching tree or graph data structures. It explores as far as possible along each branch before backtracking.
+DFS is an algorithm for traversing or searching tree or graph data structures. It explores as far as possible along each branch before
+backtracking.
 ## What is the time complexity of searching in a balanced binary search tree?
 
 The time complexity is O(log n) for a balanced binary search tree, where n is the number of nodes.
 ## Explain the concept of hashing.
 
-Hashing is the process of converting a key into an index within a hash table using a hash function. It enables efficient retrieval, insertion, and deletion of data.
+Hashing is the process of converting a key into an index within a hash table using a hash function. 
+It enables efficient retrieval, insertion, and deletion of data.
 ## What is a queue?
 
-A queue is a First In, First Out (FIFO) data structure where elements are added at the rear and removed from the front. Common operations include enqueue (add), dequeue (remove), and peek.
+A queue is a First In, First Out (FIFO) data structure where elements are added at the rear and removed from the front. 
+Common operations include enqueue (add), dequeue (remove), and peek.
 ## How does a hash table handle collisions?
 
-Collisions are handled by using techniques such as chaining (using linked lists to store multiple elements at the same index) or open addressing (finding the next available slot in the array).
+Collisions are handled by using techniques such as chaining (using linked lists to store multiple elements at the same index) 
+or open addressing (finding the next available slot in the array).
 ## Linear Search:
 
 Sequentially checks each element in a list until a match is found or the end of the list is reached.
@@ -200,7 +240,7 @@ Builds the final sorted array one item at a time by repeatedly taking the next e
 Time Complexity: O(n^2)
 ## Merge Sort:
 
-Divides the unsorted list into n sublists, each containing one element, and then repeatedly merges sublists to produce new sorted sublists.
+Divides the unsorted list into n subLists, each containing one element, and then repeatedly merges subLists to produce new sorted subLists.
 Time Complexity: O(n log n)
 ## Quick Sort:
 
@@ -220,7 +260,8 @@ Finds the shortest path between two nodes in a graph with non-negative edge weig
 Used for: Shortest path problems in weighted graphs.
 ## Dynamic Programming:
 
-Breaks down a problem into simpler overlapping subproblems and solves each subproblem only once, storing the solutions to subproblems to avoid redundant computations.
+Breaks down a problem into simpler overlapping subProblems and solves each subProblem only once, 
+storing the solutions to subProblems to avoid redundant computations.
 Used for: Optimization problems, such as the Fibonacci sequence or the knapsack problem.
 
 ## What is an algorithm?
@@ -276,7 +317,9 @@ Traversal is a key concept in algorithms and programming when working with data 
 
 ## difference between heap and tree data structures?
 
-- A tree is a hierarchical data structure that consists of nodes connected by edges. Trees have a root node, which is the topmost node, and each node has zero or more child nodes. A heap, on the other hand, is a specialized tree-based data structure with specific properties. Let's explore the key differences between a heap and a tree:
+- A tree is a hierarchical data structure that consists of nodes connected by edges. 
+- Trees have a root node, which is the topmost node, and each node has zero or more child nodes. A heap, on the other hand,
+- is a specialized tree-based data structure with specific properties. Let's explore the key differences between a heap and a tree:
 
 ### Tree:
 

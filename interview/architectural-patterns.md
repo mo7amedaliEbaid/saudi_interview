@@ -300,10 +300,28 @@ In the `main` function, the `MyApp` widget creates an instance of `CounterPresen
 
 ### Following are key differences between MVP vs MVVM:
 
-- Data is retrieved and manipulated from the data state, which is present in the Model layer. This data is transferred to the presenter layer. There is no interaction with View state in MVP. MVVM has a model located in the business logic itself where data is stored in a repository. Requests are received from a View model, and data are located accordingly.
-- There is a ViewModel in MVVM where the business logic is located. This helps to create a bridge between View and business logic and is good at testing and coupling. UI has to be updated in between. However, this ViewModel is not present in MVP, and business logic is present directly in View.
-- Data from the model is presented through a presenter, and it controls the behaviour in the application in MVP architecture. It directs the View layer and manages the interaction between model and view. Data is also saved back to the model. The presenter layer is not present in MVVM, and observables are created in each UI component.
+- Data is retrieved and manipulated from the data state, which is present in the Model layer. 
+- This data is transferred to the presenter layer. There is no interaction with View state in MVP. 
+- MVVM has a model located in the business logic itself where data is stored in a repository.
+- Requests are received from a View model, and data are located accordingly.
+- There is a ViewModel in MVVM where the business logic is located. This helps to create a bridge between View and business logic 
+- and is good at testing and coupling. UI has to be updated in between. However, this ViewModel is not present in MVP, a
+- nd business logic is present directly in View.
+- Data from the model is presented through a presenter, and it controls the behaviour in the application in MVP architecture. 
+- It directs the View layer and manages the interaction between model and view. Data is also saved back to the model. 
+- The presenter layer is not present in MVVM, and observables are created in each UI component.
 - View in MVP is not important or tightly coupled with itself so that the user can ignore the view layer easily. The view layer is important as it makes the bridge of view and view model in MVVM so that it is not possible to swipe away the view layer in MVVM.
-- View and Presenter layers in MVP are reusable, and hence it is easy to maintain this architecture. Also, it can be maintained with the help of readable codes written in either markup language or other coding language. There is no interaction between view and model in MVVM, and hence the code is run by units. This helps to do unit testing in MVVM.
-- The whole unit can be done integration testing in MVP, while only unit testing can be done in MVVM. This is because codes are easily maintainable in MVP, while in MVVM, it is not.
-- The size of the code is huge and cannot be managed easily in MVVM. This creates issues while doing testing and creating interactions between the layers. But in MVP, the codes are small and are easily manageable.
+- View and Presenter layers in MVP are reusable, and hence it is easy to maintain this architecture. 
+- Also, it can be maintained with the help of readable codes written in either markup language or other coding language. 
+- There is no interaction between view and model in MVVM, and hence the code is run by units. This helps to do unit testing in MVVM.
+- The whole unit can be done integration testing in MVP, while only unit testing can be done in MVVM. 
+- This is because codes are easily maintainable in MVP, while in MVVM, it is not.
+- The size of the code is huge and cannot be managed easily in MVVM. This creates issues while doing testing and 
+- creating interactions between the layers. But in MVP, the codes are small and are easily manageable.
+
+
+### MVVM one to many
+### MVP one to one
+### MVVM aware of the lifecycle
+### MVP Null Pointer Exception
+### Navigate before completing a request.

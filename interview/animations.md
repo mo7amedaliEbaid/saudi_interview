@@ -1,7 +1,9 @@
-- Animations in Flutter are a powerful way to create dynamic and engaging user interfaces. Here are the basics of animations in Flutter:
+- Animations in Flutter are a powerful way to create dynamic and engaging user interfaces.
+- Here are the basics of animations in Flutter:
 
 ## AnimationController:
-- The AnimationController is the heart of the animation. It's responsible for controlling the duration, playback status (forward, reverse), and more.
+- The AnimationController is the heart of the animation. It's responsible for controlling the duration, playback status (forward, reverse),
+- and more.
 ```dart
 AnimationController controller = AnimationController(
   duration: Duration(seconds: 2),
@@ -16,7 +18,8 @@ Tween<double> opacityTween = Tween<double>(begin: 0.0, end: 1.0);
 ```
 ## Curves:
 
-- Curves determine the timing of the animation. They define how the values change over time. Flutter provides various built-in curves, and you can create custom ones.
+- Curves determine the timing of the animation. They define how the values change over time. 
+- Flutter provides various built-in curves, and you can create custom ones.
 
 ```dart
 CurvedAnimation curvedAnimation = CurvedAnimation(
@@ -33,7 +36,8 @@ Animation<double> opacityAnimation = opacityTween.animate(controller);
 ```
 
 ## Listeners and Builders:
-- Listeners are callbacks that get invoked when the animation value changes. They are handy for updating the UI based on the animation's progress.
+- Listeners are callbacks that get invoked when the animation value changes. They are handy for updating the UI based on 
+- the animation's progress.
 
 ```dart
 controller.addListener(() {
@@ -65,9 +69,15 @@ void dispose() {
 ##### These basics provide a foundation for creating various animations in Flutter. Whether you're working with opacity, size, position, or other properties, these principles remain consistent across different types of animations.
 
 # what is a ticker?
-- In Flutter, a "ticker" refers to an object that produces a stream of periodic events. It is commonly used in animations to schedule updates or frames at a regular interval. The Ticker class is part of the animation framework in Flutter, and it is often used in conjunction with the AnimationController class.
-- TickerProvider: The TickerProvider interface is typically implemented by the widget that owns the AnimationController. It has a method called createTicker, which is responsible for creating a Ticker object.
-- Ticker: The Ticker class represents a ticking object that emits periodic events. It is created by a TickerProvider and connected to an AnimationController. The AnimationController uses the Ticker to advance the animation by a small amount (a "tick") at regular intervals.
+- In Flutter, a "ticker" refers to an object that produces a stream of periodic events. 
+- It is commonly used in animations to schedule updates or frames at a regular interval. 
+- The Ticker class is part of the animation framework in Flutter, and it is often used in conjunction with the AnimationController class.
+- TickerProvider: The TickerProvider interface is typically implemented by the widget that owns the AnimationController. 
+- It has a method called createTicker, which is responsible for creating a Ticker object.
+- Ticker: The Ticker class represents a ticking object that emits periodic events. 
+- It is created by a TickerProvider and connected to an AnimationController. 
+- The AnimationController uses the Ticker to advance the animation by a small amount (a "tick") at regular intervals.
+
 ```dart
   import 'package:flutter/material.dart';
 
@@ -135,12 +145,15 @@ class _MyAnimatedWidgetState extends State<MyAnimatedWidget> with TickerProvider
   }
 }
 ```
-- In this example, _ticker is created using the createTicker method provided by the TickerProviderStateMixin. The _ticker then triggers the animation logic on each tick, allowing you to update the state of your widget or perform any other animations you need.
+- In this example, _ticker is created using the createTicker method provided by the TickerProviderStateMixin. 
+- The _ticker then triggers the animation logic on each tick, allowing you to update the state of your widget or perform any other 
+- animations you need.
 
 # what types of animations in dart with examples
 ## Implicit Animations:
-- Implicit animations automatically animate changes to a property over time. Flutter provides several built-in implicit animations, such as AnimatedContainer, AnimatedOpacity, and AnimatedPositioned. 
- - Here's an example using AnimatedContainer:
+- Implicit animations automatically animate changes to a property over time. Flutter provides several built-in implicit animations, 
+- such as AnimatedContainer, AnimatedOpacity, and AnimatedPositioned. 
+- Here's an example using AnimatedContainer:
 ```dart
 import 'package:flutter/material.dart';
 
@@ -194,7 +207,9 @@ class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
 }
 ```
 ## Tween Animations:
-- Tween animations interpolate between two values over time. The Tween class is commonly used for this purpose. Here's an example of a simple Tween animation:
+- Tween animations interpolate between two values over time. The Tween class is commonly used for this purpose.
+- Here's an example of a simple Tween animation:
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -266,7 +281,10 @@ class _MyTweenAnimationState extends State<MyTweenAnimation> with SingleTickerPr
 }
 ```
 ## Custom Animations:
-- For more complex animations, you can create custom animations using the Animation class. This involves defining your own interpolation logic and updating the UI accordingly. Custom animations are often implemented using the AnimationController and Tween classes.
+- For more complex animations, you can create custom animations using the Animation class. 
+- This involves defining your own interpolation logic and updating the UI accordingly. 
+- Custom animations are often implemented using the AnimationController and Tween classes.
+
 ```dart
 import 'package:flutter/material.dart';
 
@@ -340,4 +358,5 @@ class _MyCustomAnimationState extends State<MyCustomAnimation> with SingleTicker
   }
 }
 ```
-- These are just a few examples of the types of animations you can implement in Dart and Flutter. Depending on your needs, you may choose different animation techniques for different scenarios.
+- These are just a few examples of the types of animations you can implement in Dart and Flutter. 
+- Depending on your needs, you may choose different animation techniques for different scenarios.
