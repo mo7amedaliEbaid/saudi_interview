@@ -1,7 +1,8 @@
-```agsl
+```
 what is squashing in git
 
-In Git, squashing refers to the process of combining multiple commits into a single commit. This is often done during an interactive rebase to clean up the commit history, making it more concise and easier to understand.
+In Git, squashing refers to the process of combining multiple commits into a single commit. This is often done during an interactive rebase 
+to clean up the commit history, making it more concise and easier to understand.
 
 Why Squash Commits?
 Clean History: Combine small, incremental commits (e.g., "fix typo", "update variable name") into a single meaningful commit.

@@ -235,7 +235,7 @@ class Switch {
 - Adding new features without modifying the existing code.
 
 #### L=>Liskov substitution principle.
-- Objects of a superclass should be replacable with objects of its subclass without breaking the application.
+- Objects of a superclass should be replaceable with objects of its subclass without breaking the application.
 - Objects of our subclass behaves the same way as objects of our superclass.
 
 #### I=>Interface Segregation Principle .
