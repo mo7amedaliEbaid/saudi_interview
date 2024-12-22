@@ -1,6 +1,7 @@
 # Object-Oriented Programming (OOP) Basics in Dart
 
-- Object-Oriented Programming (OOP) is a programming paradigm that revolves around the concept of "objects," which are instances of classes. Dart, as an object-oriented language, supports key OOP principles:
+- Object-Oriented Programming (OOP) is a programming paradigm that revolves around the concept of "objects," 
+- which are instances of classes. Dart, as an object-oriented language, supports key OOP principles:
 
 - In Dart, the terms "object," "class," and "instance" are fundamental concepts related to object-oriented programming. Let's define each term:
 
@@ -69,7 +70,9 @@ person.sayHello();
 #### In summary, a class serves as a blueprint for creating objects, and an instance is a specific realization of that blueprint. Objects encapsulate both data and behavior, providing a way to model and represent entities in your Dart program.
 
 # Encapsulation.
-- Encapsulation in Dart refers to the concept of bundling the data (attributes) and the methods (functions) that operate on the data into a single unit, often known as a class. It also involves controlling access to the internal details of an object, typically by using access modifiers like private, public, or protected..
+- Encapsulation in Dart refers to the concept of bundling the data (attributes) and the methods (functions) that operate on the data into a single unit,
+- often known as a class. It also involves controlling access to the internal details of an object, typically by using access modifiers like private,
+- public, or protected..
 - In Dart, you can use underscores (_) to denote private members (variables or methods) within a class.
 ```dart
 class Person {
@@ -121,7 +124,8 @@ void main() {
 
 # Inheritance.
 - Inheritance allows a class to inherit properties and behaviors from another class. Dart supports single inheritance.
-- Inheritance is a fundamental concept in object-oriented programming that allows a class (subclass or derived class) to inherit properties and behaviors from another class (superclass or base class). Dart supports single inheritance, meaning a class can inherit from only one superclass.
+- Inheritance is a fundamental concept in object-oriented programming that allows a class (subclass or derived class) to inherit properties 
+- and behaviors from another class (superclass or base class). Dart supports single inheritance, meaning a class can inherit from only one superclass.
 
 
 ```dart
@@ -200,7 +204,8 @@ void main() {
 ##### In this example:
 
 - Animal is the base class with common properties (name, age) and methods (eat, makeSound).
-- Dog is a subclass of Animal that inherits its properties and methods. It also has its own property (breed) and a specific implementation of the makeSound method (method overriding).
+- Dog is a subclass of Animal that inherits its properties and methods. It also has its own property (breed) and a specific implementation of 
+- the makeSound method (method overriding).
 
 ##### Key points to note:
 - The super keyword is used to refer to the superclass and invoke its constructor.
@@ -210,8 +215,10 @@ void main() {
 ##### Inheritance promotes code reuse, extensibility, and the creation of hierarchies in your codebase. However, it's important to use it judiciously to avoid creating overly complex or tightly coupled class hierarchies.
 
 # Polymorphism.
-- Polymorphism allows objects to be treated as instances of their parent class, providing a consistent interface. Dart supports polymorphism through method overriding.
-- Polymorphism in Dart allows objects of different types to be treated as objects of a common type. There are two types of polymorphism: compile-time (or static) polymorphism and runtime (or dynamic) polymorphism.
+- Polymorphism allows objects to be treated as instances of their parent class, providing a consistent interface. 
+- Dart supports polymorphism through method overriding.
+- Polymorphism in Dart allows objects of different types to be treated as objects of a common type. 
+- There are two types of polymorphism: compile-time (or static) polymorphism and runtime (or dynamic) polymorphism.
 ```dart
 class Shape {
   void draw() {
@@ -238,7 +245,8 @@ void main() {
 
 ### Compile-time Polymorphism:
 ##### Method Overloading:
-- Dart supports method overloading by providing multiple methods with the same name but different parameter lists. The method called depends on the number and types of arguments during compile-time.
+- Dart supports method overloading by providing multiple methods with the same name but different parameter lists. 
+- The method called depends on the number and types of arguments during compile-time.
 ```dart
 class MathOperations {
   int add(int a, int b) => a + b;
@@ -254,7 +262,8 @@ void main() {
 ```
 ### Runtime Polymorphism:
 ##### Method Overriding:
-- Dart supports method overriding, where a subclass provides a specific implementation of a method that is already defined in its superclass. The method called is determined at runtime.
+- Dart supports method overriding, where a subclass provides a specific implementation of a method that is already defined in its superclass. 
+- The method called is determined at runtime.
 ```dart
 class Animal {
   void makeSound() => print("Generic Animal Sound");
@@ -283,8 +292,11 @@ void main() {
 
 # Abstraction.
 
-- Abstraction involves simplifying complex systems by modeling classes based on essential properties and behaviors. Dart supports abstraction through interfaces and abstract classes.
-- Abstraction in Dart is a concept that allows you to define the essential features of an object while hiding the unnecessary details. It helps in simplifying complex systems by modeling classes based on their essential characteristics and behaviors. In Dart, abstraction is often achieved through abstract classes and interfaces.
+- Abstraction involves simplifying complex systems by modeling classes based on essential properties and behaviors. 
+- Dart supports abstraction through interfaces and abstract classes.
+- Abstraction in Dart is a concept that allows you to define the essential features of an object while hiding the unnecessary details. 
+- It helps in simplifying complex systems by modeling classes based on their essential characteristics and behaviors. 
+- In Dart, abstraction is often achieved through abstract classes and interfaces.
 
 
 ```dart
@@ -382,7 +394,8 @@ void main() {
 
 ## what is a factory constructor and how to use it.
 
-- A factory constructor in Dart is a special type of constructor that is used to create an instance of a class. The key difference between a regular constructor and a factory constructor is that a factory constructor is not required to return a new instance of the class. It can return an existing instance or even a completely different type.
+- A factory constructor in Dart is a special type of constructor that is used to create an instance of a class. The key difference between a regular constructor and a factory constructor is 
+- that a factory constructor is not required to return a new instance of the class. It can return an existing instance or even a completely different type.
 ```dart
 class Logger {
   final String name;
@@ -428,7 +441,8 @@ void main() {
 #### Factory constructors are useful in scenarios where you want to control the creation of objects, reuse existing instances, or implement caching mechanisms.
 
 ## what is mixin in dart.
-- In Dart, a mixin is a way to reuse a class's code in multiple class hierarchies without using inheritance. Mixins allow a class to include the code and functionality of another class, without creating a strict parent-child relationship.
+- In Dart, a mixin is a way to reuse a class's code in multiple class hierarchies without using inheritance. 
+- Mixins allow a class to include the code and functionality of another class, without creating a strict parent-child relationship.
 ```dart
 // Define a mixin named LoggerMixin
 mixin LoggerMixin {
@@ -458,7 +472,8 @@ void main() {
 #### In this example:
 
 - LoggerMixin is a mixin that defines a log method.
-- The DataService class uses the with keyword to include the functionality of LoggerMixin. This means that DataService can now use the log method from LoggerMixin.
+- The DataService class uses the with keyword to include the functionality of LoggerMixin. 
+- This means that DataService can now use the log method from LoggerMixin.
 
 ### Key points about mixins in Dart:
 - Use of mixin Keyword: The mixin keyword is used to define a mixin. You can then apply the mixin to a class using the with keyword.
@@ -467,12 +482,15 @@ void main() {
 
 - Code Reusability: Mixins promote code reusability by allowing you to include functionality from multiple sources without creating deep class hierarchies.
 
-- Avoiding Diamond Problem: Dart's mixin system is designed to avoid the "Diamond Problem" associated with multiple inheritance, where a class inherits from two classes that have a common ancestor.
+- Avoiding Diamond Problem: Dart's mixin system is designed to avoid the "Diamond Problem" associated with multiple inheritance, 
+- where a class inherits from two classes that have a common ancestor.
 
 #### Using mixins, you can compose classes with shared functionality in a flexible and modular way, enhancing code organization and maintainability.
 
 ## what is diamond problem.
-- The "Diamond Problem" is a term used in the context of object-oriented programming languages that support multiple inheritance. It refers to a specific issue that arises when a class inherits from two classes that have a common ancestor. The problem gets its name from the shape of the class inheritance diagram, which forms a diamond shape.
+- The "Diamond Problem" is a term used in the context of object-oriented programming languages that support multiple inheritance. 
+- It refers to a specific issue that arises when a class inherits from two classes that have a common ancestor.
+- The problem gets its name from the shape of the class inheritance diagram, which forms a diamond shape.
 ```
       A
      / \
@@ -487,8 +505,10 @@ void main() {
 - Class D inherits from both B and C.
 
 ##### Now, the Diamond Problem occurs when there is a conflict in the inherited methods or attributes between B and C, and it's unclear which version should be used in D. This ambiguity can lead to unexpected behavior and challenges in maintaining the code.
-- For example, if both B and C define a method with the same name but different implementations, and D inherits from both, it's unclear which implementation D should inherit. This can result in confusion, unpredictable behavior, and difficulties in code maintenance.
-- While the Diamond Problem is more apparent in languages with direct support for multiple inheritance, it's essential to consider and manage class hierarchies carefully to avoid unexpected issues in any object-oriented programming language.
+- For example, if both B and C define a method with the same name but different implementations, and D inherits from both, 
+- it's unclear which implementation D should inherit. This can result in confusion, unpredictable behavior, and difficulties in code maintenance.
+- While the Diamond Problem is more apparent in languages with direct support for multiple inheritance, 
+- it's essential to consider and manage class hierarchies carefully to avoid unexpected issues in any object-oriented programming language.
 #### Dart (Interfaces and Mixins): Dart, which supports single inheritance but includes mixins and interfaces, provides a way to compose classes with shared functionality without introducing the Diamond Problem. Mixins allow code reuse without the need for direct multiple inheritance.
 
 ## what is types of Inheritance in dart
@@ -546,7 +566,9 @@ class Circle implements Shape {
   }
 }
 ```
-- In Dart, the focus is on single inheritance, but mixins and abstract classes provide mechanisms for achieving some level of code reuse and abstraction similar to multiple inheritance and interfaces in other languages. Dart's approach emphasizes composition and flexibility in class composition, allowing developers to create modular and maintainable code.
+- In Dart, the focus is on single inheritance, but mixins and abstract classes provide mechanisms for achieving 
+- some level of code reuse and abstraction similar to multiple inheritance and interfaces in other languages. 
+- Dart's approach emphasizes composition and flexibility in class composition, allowing developers to create modular and maintainable code.
 
 ## difference between implement, extend, with in dart.
 
@@ -615,7 +637,8 @@ class Circle implements Shape {
 
 
 ## how to achieve overloading in dart.
-- In Dart, function overloading, as traditionally seen in some other languages like Java or C++, is not directly supported. Dart promotes a more flexible approach using named parameters and default values to achieve similar functionality.
+- In Dart, function overloading, as traditionally seen in some other languages like Java or C++, is not directly supported. 
+- Dart promotes a more flexible approach using named parameters and default values to achieve similar functionality.
 
 - Here's an example of how you can simulate function overloading in Dart:
 
@@ -651,7 +674,8 @@ void main() {
 #### This approach takes advantage of Dart's flexibility with named parameters and allows you to create methods with different parameter lists based on your requirements. While it's not true function overloading in the classical sense, it achieves a similar result. Additionally, Dart's strong type system and optional parameters provide a clear and concise way to work with different types and numbers of parameters.
 
 ## what is the difference between abstract class and interface in general and in dart .
-- In general object-oriented programming (OOP) terminology, abstract classes and interfaces are both mechanisms for abstraction and defining contracts for classes. However, there are key differences in their usage and characteristics. Let's explore the general concepts and then see how they are implemented in Dart.
+- In general object-oriented programming (OOP) terminology, abstract classes and interfaces are both mechanisms for abstraction and defining contracts for classes.
+- However, there are key differences in their usage and characteristics. Let's explore the general concepts and then see how they are implemented in Dart.
 
 ### Abstract Class (General):
 #### Can Have State:
@@ -717,15 +741,20 @@ class DataService with Loggable {
   // ...
 }
 ```
-- In Dart, while there are no explicit interfaces, you can use abstract classes and mixins to achieve similar goals. Dart's design philosophy focuses on providing flexibility and expressive ways to achieve abstraction without being constrained by rigid interface definitions.
+- In Dart, while there are no explicit interfaces, you can use abstract classes and mixins to achieve similar goals.
+- Dart's design philosophy focuses on providing flexibility and expressive ways to achieve abstraction without being constrained by
+- rigid interface definitions.
 
 ## explain super keyword and its usage in dart
-- In Dart, the super keyword is used to refer to the superclass (parent class) from within a subclass. It allows you to access members (fields or methods) of the superclass and invoke its constructor. The super keyword is particularly useful in scenarios where a subclass wants to extend or override behavior defined in its superclass.
+- In Dart, the super keyword is used to refer to the superclass (parent class) from within a subclass. 
+- It allows you to access members (fields or methods) of the superclass and invoke its constructor. 
+- The super keyword is particularly useful in scenarios where a subclass wants to extend or override behavior defined in its superclass.
 
 ##### Here are the main usages of the super keyword in Dart:
 
 ### Invoking Superclass Constructor:
-- When a subclass is created, it can invoke the constructor of its superclass using the super keyword. This is necessary to initialize the inherited members from the superclass.
+- When a subclass is created, it can invoke the constructor of its superclass using the super keyword. 
+- This is necessary to initialize the inherited members from the superclass.
 ```dart
 class Animal {
   String name;
@@ -768,7 +797,7 @@ void main() {
   myDog.makeSound();
 }
 ```
-- Here, Dog overrides the makeSound method from Animal and uses super.makeSound() to invoke the superclass's implementation before adding its own behavior.
+- Here, Dog overrides the makeSound method from Animal and uses super.makeSound() to invoke the superClass's implementation before adding its own behavior.
 
 ### Accessing Superclass Members:
 - The super keyword can be used to access fields or methods of the superclass directly from within the subclass.
@@ -813,7 +842,7 @@ void main() {
 - Specifies a set of methods that a class must implement.
 ##### Benefits.
 - Reduces boilerplate code (Code sections repeated throughout a program or software).
-- Increase reuseability, maintainability and readability.
+- Increase reusability, maintainability and readability.
  
 <br/>
 
@@ -825,9 +854,9 @@ void main() {
 - Code reusability, save time and reduce code boilerplate.
 
 ##### Types.
-- Single Inheritence.
-- Multiple Inheritence (Dart doesn't support multiple inheritence but we can use mixins to inherit multiple classes).
-- Multilevel Inheritence.
+- Single Inheritance.
+- Multiple Inheritance (Dart doesn't support multiple inheritance but we can use mixins to inherit multiple classes).
+- Multilevel Inheritance.
 
 <br/>
 
@@ -862,4 +891,6 @@ Person him=new Him();
 - Data Hiding, increases flexibility and reusability.
 
 ## what is composition in oop?
-- Like Inheritance, Composition is a concept in object-oriented programming that models the relationship between two classes. Composition involves using other classes to build more complex classes and there is no parent/child relationship exists in this case. Basically, complex objects are composed of other objects.
+- Like Inheritance, Composition is a concept in object-oriented programming that models the relationship between two classes. 
+- Composition involves using other classes to build more complex classes and there is no parent/child relationship exists in this case.
+- Basically, complex objects are composed of other objects.

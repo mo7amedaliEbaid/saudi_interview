@@ -93,7 +93,8 @@ class ObxExample extends StatelessWidget {
 ```
 ### Getx
 - It is a combination of both `GetBuilder` and `Obx`, providing both non-reactive and reactive updates in a single widget.
-- when my controller isn't yet registered or I want to be very explicit/obvious which controller is being used or I need to run some initState calls during creation and I want a reactive widget.
+- when my controller isn't yet registered or I want to be very explicit/obvious which controller is being used or I need to run some initState 
+- calls during creation and I want a reactive widget.
 - `GetX` widget combines both reactive and non-reactive updates. It allows you to directly use the controller's properties and update the UI.
 
 ```dart
@@ -175,7 +176,8 @@ Get.put<MyController>(MyController());
   - `Get.off()`: Replaces the current screen with the new screen, removing the previous screen from the stack.
   - `Get.offAll()`: Clears the entire navigation stack and pushes the new screen.
 ## 14. What is Bindings in GetX?
-- **Answer**: `Bindings` are used to manage the dependency injection of controllers. They allow you to lazily load controllers and other dependencies when a route is accessed.
+- **Answer**: `Bindings` are used to manage the dependency injection of controllers. They allow you to lazily load controllers and other 
+- dependencies when a route is accessed.
 ## 15. How do you use Bindings in GetX?
 - **Answer**: Create a class that extends `Bindings` and override the `dependencies()` method:
   ```dart
@@ -191,20 +193,24 @@ Get.put<MyController>(MyController());
   GetPage(name: '/home', page: () => HomeScreen(), binding: HomeBinding());
   ```
 ## 16. What is the GetxController and how is it used?
-- **Answer**: `GetxController` is a controller class that provides lifecycle methods and state management features. It's used to manage the state and logic of a particular screen or widget.
+- **Answer**: `GetxController` is a controller class that provides lifecycle methods and state management features. 
+- It's used to manage the state and logic of a particular screen or widget.
 ## 17. How do you dispose of a GetxController?
-- **Answer**: `GetxController` is automatically disposed of when the route is removed from the stack. However, you can also manually dispose of it by calling `Get.delete<MyController>()`.
+- **Answer**: `GetxController` is automatically disposed of when the route is removed from the stack. However, 
+- you can also manually dispose of it by calling `Get.delete<MyController>()`.
 ## 18. What is the GetBuilder's id parameter used for?
-- **Answer**: The `id` parameter in `GetBuilder` allows you to selectively update widgets associated with a specific ID, optimizing performance by avoiding unnecessary rebuilds.
+- **Answer**: The `id` parameter in `GetBuilder` allows you to selectively update widgets associated with a specific ID, 
+- optimizing performance by avoiding unnecessary rebuilds.
 ## 19. How do you handle errors in GetX?
 - **Answer**: Errors can be handled using `.obs` variables and `ever`, `once`, or `debounce` workers to listen to state changes and manage error states.
 ## 20. What are workers in GetX and how do you use them?
-- **Answer**: Workers are methods in GetX that allow you to listen to changes in observable variables. Examples include `ever`, `once`, `debounce`, and `interval`. For example:
+- **Answer**: Workers are methods in GetX that allow you to listen to changes in observable variables. Examples include `ever`, `once`, `debounce`, 
+- and `interval`. For example:
   ```dart
   ever(counter, (_) => print("Counter changed"));
   ```
-## 21. How do you show a Snackbar using GetX?
-- **Answer**: You can use `Get.snackbar()` to show a snackbar without needing `context`. For example:
+## 21. How do you show a Snack bar using GetX?
+- **Answer**: You can use `Get.snackbar()` to show a snack bar without needing `context`. For example:
   ```dart
   Get.snackbar("Title", "Message");
   ```
@@ -232,7 +238,8 @@ Get.put<MyController>(MyController());
   );
   ```
 ## 24. How do you use middlewares in GetX?
-- **Answer**: Middlewares in GetX are used to execute code before a route is accessed. Implement `GetMiddleware` and override `redirect` or `onPageCalled` methods.
+- **Answer**: Middlewares in GetX are used to execute code before a route is accessed. Implement `GetMiddleware` and 
+- override `redirect` or `onPageCalled` methods.
 ## 25. Can you explain how to use themes in GetX?
 - **Answer**: GetX makes theme management easy. You can switch themes dynamically using `Get.changeTheme()` or `Get.changeThemeMode()`:
   ```dart
