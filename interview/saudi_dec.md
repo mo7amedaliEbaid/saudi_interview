@@ -1021,7 +1021,8 @@ Both the CPU and GPU work together in modern computing systems to deliver powerf
 In Flutter, VM typically refers to the Dart Virtual Machine. The Dart VM is an integral part of Flutter's development workflow and runtime. Here's a breakdown:
 
 1. Dart Virtual Machine (Dart VM)
-The Dart VM is a runtime environment for running Dart code. It plays a crucial role during the development and debugging of Flutter apps. Here's how it is used:
+The Dart VM is a runtime environment for running Dart code. It plays a crucial role during the development and debugging of Flutter apps.
+Here's how it is used:
 
 Development Stage:
 Hot Reload: The Dart VM allows Flutter to support hot reload, enabling developers to see changes in their code almost instantly without restarting the app.
